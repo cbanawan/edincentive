@@ -1,0 +1,402 @@
+// Simplex 3.3.4
+// Bootswatch
+// -----------------------------------------------------
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+
+.btn-shadow(@color) {
+  #gradient > .vertical-three-colors(lighten(@color, 3%), @color, 6%, darken(@color, 3%));
+  filter: none;
+  border: none;
+}
+
+// Navbar =====================================================================
+.navbar {    
+  &-inverse {
+    .badge {
+      background-color: #fff;
+      color: @brand-primary;
+    }
+  }
+}
+
+// Buttons ====================================================================
+
+.btn {
+  font-family: @headings-font-family;
+}
+
+.btn-default,
+.btn-default:hover {
+  .btn-shadow(@btn-default-bg);
+}
+
+.btn-primary,
+.btn-primary:hover {
+  .btn-shadow(@btn-primary-bg);
+}
+
+.btn-success,
+.btn-success:hover {
+  .btn-shadow(@btn-success-bg);
+}
+
+.btn-info,
+.btn-info:hover {
+  .btn-shadow(@btn-info-bg);
+}
+
+.btn-warning,
+.btn-warning:hover {
+  .btn-shadow(@btn-warning-bg);
+}
+
+.btn-danger,
+.btn-danger:hover {
+  .btn-shadow(@btn-danger-bg);
+}
+
+// Typography =================================================================
+
+body {
+  font-weight: 200;
+}
+
+// Tables =====================================================================
+
+th {
+  color: @headings-color;
+}
+
+// Forms ======================================================================
+
+legend {
+  color: @headings-color;
+}
+
+label {
+  font-weight: normal;
+}
+
+.has-warning {
+  .help-block,
+  .control-label {
+    color: @brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-danger;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label {
+    color: @brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-danger;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label {
+    color: @brand-success;
+  }
+
+  .form-control,
+  .form-control:focus {
+    border-color: @brand-success;
+  }
+}
+
+// Navs =======================================================================
+
+.pager {
+  a {
+    color: @headings-color;
+  }
+
+  a:hover,
+  .active > a, {
+    border-color: @brand-primary;
+    color: #fff;
+  }
+
+  .disabled > a {
+    border-color: @pager-border;
+  }
+}
+
+// Carousel ===================================================================
+
+.carousel-control {
+  // Set gradients for backgrounds
+  text-align: left;
+  &.left {
+    background: none;
+  }
+  &.right {
+    left: auto;
+    right: 0;
+	text-align: right;
+	background: none;
+  }
+  
+  .glyphicon-chevron-left {
+    left: 15px;
+    margin-left: -10px;
+  }
+  .icon-next,
+  .glyphicon-chevron-right {
+    right: 15px;
+    margin-right: -10px;
+  }
+}
+
+.carousel-caption {
+  position: relative;
+  text-shadow: none;
+  h3,p
+  {
+	color: @text-color;
+  }
+}
+
+// Home Page  ===================================================================
+#homeSlider
+{
+	height: 348px;
+	position: relative;
+	overflow: hidden;
+	
+	.carousel-caption
+	{
+		text-align: left;
+		margin-left:-10%;
+		width: 70%;
+	}
+
+	.slide h3
+	{
+		font-weight: normal;
+		line-height: 1.2em;
+		font-size: 2em;
+		margin-top: 60px;
+		color: #4d4d4d !important;
+	}
+
+	.slide h3 b
+	{
+		font-weight: normal;
+		font-size: 1.2em;
+	}
+
+	.slide p
+	{
+		color: #4d4d4d;
+		margin: 20px 0px;
+	}
+}
+
+.joinButton {
+	position: relative;
+	display: block;
+	max-width: 300px;
+	font-size: 2.5em;
+	margin: -120px 0px 0px 12%;
+}
+
+#home-widget
+{
+	margin-top: 40px;
+	background-color: #e2e2e2;
+	position: relative;
+	max-height: 200px;
+	overflow: hidden;
+    border-radius: @border-radius-large;
+
+	.form-inline
+	{
+		.form-group,
+		.form-control
+		{
+			width: 100%;
+		}
+	}
+	
+	.home-widget-item
+	{
+		text-align: center;
+		position: relative;
+		width: 30%;
+		float: left;
+		height: 200px;
+		overflow: hidden;
+		cursor: pointer;
+	}
+
+	.ui-accordion-horizontal
+	{
+		position: relative;
+		
+		.ui-accordion-handle 
+		{
+			display: block;
+			margin: 0px;
+			width: 43px;
+			height: 200px;
+			float: right;		
+		}
+		
+		.home-widget-item:first-child .ui-accordion-handle
+		{	
+			width: 73px;
+			margin-left: -30px;
+		}
+		
+		.ui-accordion-handle h3 
+		{
+			white-space: nowrap;
+			-moz-transform: rotate(90deg);
+			-webkit-transform: rotate(90deg) translate3d(0,0,0);
+			-o-transform: rotate(90deg);
+			-ms-transform: rotate(90deg);
+			text-transform: uppercase;
+			margin: 40px 0px 0px 0px;
+			font-size: 0.8em;
+			font-family: arial, sans-serif;
+			-webkit-font-smoothing: auto;
+            text-shadow: none;
+		}
+		
+		.home-widget-item:first-child .ui-accordion-handle h3
+		{
+			margin: 45px -4px 0px 0px;
+		}
+		
+		.ui-accordion-content
+		{
+			overflow: hidden;
+			margin: 10px 20px;
+			position: relative;
+			
+			input[type=submit]
+			{
+				margin-top: 10px;
+				width: 100%;
+			}
+		}
+		
+		.ui-accordion-content-preview
+		{
+			display: block;
+			width: 100%;
+			padding: 40px;
+            color: @gray-dark;
+            font-size: 1.2em;
+			span
+			{
+				display: block;
+				padding: 3px;
+				margin: 10px auto;
+				width: 30px;
+				height: 30px;
+				font-weight: bold;
+				border: 2px solid #333333;
+				background-color: #fff;
+			}
+		}
+		
+		.ui-accordion-content-meat
+		{
+			display: none;
+			width: 80%;
+			text-align: left;
+			float: left;		
+			color: @gray-dark;
+			p,h2
+			{
+				margin-left: 20px;		
+			}
+		}
+
+	}
+}	
+
+.join-accordion
+{
+	background: #ffd966 url(/images/vertical-accordion-handle-bg-3.png) no-repeat 50% 100%;
+	width: 80%;
+	margin: auto;
+	
+	.join-widget-item
+	{
+		overflow: hidden;
+		position: relative;
+	}
+	
+	.ui-accordion-content-preview
+	{
+		text-align: center;
+		padding-top: 20px;
+		cursor: pointer;
+	}
+	
+	.ui-accordion-handle
+	{
+		text-align: center;
+		cursor: pointer;
+		
+		h3 
+		{
+			white-space: nowrap;
+			-moz-transform: rotate(-8.7deg);
+			-webkit-transform: rotate(-8.7deg) translate3d(0,0,0);
+			-o-transform: rotate(-8.7deg);
+			-ms-transform: rotate(-8.7deg);
+			text-transform: uppercase;
+			margin: 0px 0px 0px 30%;
+			font-size: 0.8em;
+			font-family: arial, sans-serif;
+			color: #333333;
+			-webkit-font-smoothing: auto;
+			display: block;
+			height: 30px;
+			padding-top: 15px;
+		}
+		
+		h3:hover
+		{
+			font-weight: bold;
+		}
+	}
+	
+	.ui-accordion-content-meat
+	{
+		padding: 30px;
+	}
+}
+
+// Collapse  ===================================================================
+
+.collapse .panel-title
+{
+	a,
+	a:hover
+	{
+		display: block;
+		width: 100%;
+		padding: 10px 5px;
+		text-decoration: none;
+	}
+}
+
+// Indicators =================================================================
+
+// Progress bars ==============================================================
+
+// Containers =================================================================

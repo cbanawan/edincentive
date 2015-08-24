@@ -1,0 +1,69 @@
+application: educationincentive
+module: dev
+version: 1
+runtime: php55
+api_version: 1
+skip_files:
+- ^(.*/)?.*/runtime/.*$
+- ^(.*/)?.*/web/assets/.*$
+- ^tests$
+
+env_variables:
+ TMP: tmp/
+ environment: 'dev'
+
+handlers:
+# favicon.ico support
+- url: /(favicon\.ico)
+  static_files: frontend/web/\1
+  upload: frontend/web/(favicon\.ico)
+  
+# apple touch icons
+- url: /apple-touch-icon-(.+)-precomposed.png
+  static_files: frontend/web/images/apple-touch-icon-\1.png
+  upload: frontend/web/images/apple-touch-icon-(.+).png
+
+- url: /apple-touch-icon-precomposed.png
+  static_files: frontend/web/images/apple-touch-icon.png
+  upload: frontend/web/images/apple-touch-icon.png
+
+- url: /apple-touch-icon-(.+).png
+  static_files: frontend/web/images/apple-touch-icon-\1.png
+  upload: frontend/web/images/apple-touch-icon-(.+).png
+  
+- url: /apple-touch-icon.png
+  static_files: frontend/web/images/apple-touch-icon.png
+  upload: frontend/web/images/apple-touch-icon.png
+
+# robots.txt support
+- url: /(robots\.txt)
+  static_files: frontend/web/\1
+  upload: frontend/web/(robots\.txt)
+ 
+# sitemap.xml support
+- url: /(sitemap\.xml)
+  static_files: frontend/web/\1
+  upload: frontend/web/(sitemap\.xml)
+ 
+# CSS
+- url: /css
+  static_dir: frontend/web/css
+
+# IMAGES
+- url: /images
+  static_dir: frontend/web/images
+ 
+# JS
+- url: /js
+  static_dir: frontend/web/js
+  
+- url: /assets/(.+)
+  static_files: frontend/web/assets/\1
+  upload: frontend/web/assets/(.+)
+  
+- url: /backend(.*)
+  script: backend/web/index.php
+ 
+# Main handler
+- url: /.*
+  script: frontend/web/index.php
